@@ -2,11 +2,22 @@
     "builders": [
       {
         "type": "amazon-ebs",
-        "region": "us-east-1",
-        "source_ami": "ami-fce3c696",
+        "region": "sa-east-1",
+        "source_ami_filter":{
+          "filters":{
+            
+          }
+        },
         "instance_type": "t2.micro",
+        "ssh_username": "ubuntu",
         "ami_name": "packer {{timestamp}}",
-        "ssh_username": "ubuntu"
+        "ami_description": "from {{.SourceAMI}}",
+        "tags":{
+          "OS_Version": "Cent-OS",
+          "Base_AMI_Name": "from {{.SourceAMI}}",
+          "Extra": "{{ .SourceAMITags.TagName }}",
+          "Region": "{{ .SourceRegion }}"
+        }
       }
     ]
 }

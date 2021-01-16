@@ -3,13 +3,13 @@
       {
         "type": "amazon-ebs",
         "region": "sa-east-1",
-        "source_ami_filter":{
-          "filters":{
-            "virtualization_type": "hvm",
-            "plataform": "Cent OS",
-            "source": "amazon/aws*2.10.1-centos7-hvm-x86_64*"
+        "source_ami_filter": {
+          "filters": {
+            "virtualization-type": "hvm",
+            "name": "ubuntu/images/*ubuntu-bionic-18.04-amd64-server-*",
+            "root-device-type": "ebs"
           },
-          "owner": "most_recent",
+          "owners": ["099720109477"],
           "most_recent": true
         },
         "instance_type": "t2.micro",

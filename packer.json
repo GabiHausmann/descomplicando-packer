@@ -5,8 +5,12 @@
         "region": "sa-east-1",
         "source_ami_filter":{
           "filters":{
-            
-          }
+            "virtualization_type": "hvm",
+            "plataform": "Cent OS",
+            "source": "amazon/aws*2.10.1-centos7-hvm-x86_64*"
+          },
+          "owner": "most_recent",
+          "most_recent": true
         },
         "instance_type": "t2.micro",
         "ssh_username": "ubuntu",
